@@ -1,0 +1,74 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the theme object.
+$parent-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+    tertiary: mat.$blue-palette,
+  ),
+  density: (
+    scale: 0,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+:root {
+  @include mat.all-component-themes($parent-theme);
+}
+
+// Comment out the line below if you want to use the pre-defined typography utility classes.
+// For more information: https://material.angular.io/guide/typography#using-typography-styles-in-your-application.
+// @include mat.typography-hierarchy($parent-theme);
+
+// Comment out the line below if you want to use the deprecated `color` inputs.
+// @include mat.color-variants-backwards-compatibility($parent-theme);
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family:regularSf;
+  src: url(assets/fonts/SF\ UI\ Display\ Regular.ttf) format('trueType');
+}
+*{
+  font-family: regularSf;
+}
+
+.text-purple{
+  color: #8E44AD;
+}
+.purple-border{
+  border-color: #8E44AD !important;
+}
+
+label{
+  color: #7F8C8D;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 17px;
+}
+
+input {
+  border:1px solid #D6DBE4;
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  outline: none;
+  height: 36px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* styles.scss or component's CSS */
+::ng-deep .snackbar-error {
+  background-color: red !important;
+  color: white !important;
+}

@@ -1,0 +1,87 @@
+.modal-container {
+  background-color: #fff;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close-btn mat-icon {
+  font-size: 24px;
+  color: #000;
+}
+
+/* Image Style */
+.image-container {
+  margin-top: 30px;
+}
+
+.oval {
+  box-sizing: border-box;
+  height: 127px;
+  width: 127px;
+  border: 1px solid #FFFFFF;
+  border-radius: 50%; /* Ensures the image is round */
+}
+
+/* Name Style */
+.user-name {
+  height: 37px;
+  width: 150px;
+  color: #34495E;
+  font-family: ".SF NS Display";
+  font-size: 25px;
+  letter-spacing: 0;
+  line-height: 29px;
+}
+
+
+
+
+/* Modal Footer (Action Buttons) */
+.modal-footer {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.action-btn {
+  display: flex;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  align-items: center;  /* Aligns the icon and text in the center vertically */
+  padding: 8px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.edit-action{
+  background-color: #8E44AD;
+}
+.delete-action{
+color: #8E44AD;
+border: 1px solid #8E44AD !important;
+}
+
+.action-btn mat-icon {
+  margin-right: 8px; /* Adds space between the icon and text */
+}
+

@@ -1,0 +1,19 @@
+<div class="modal-overlay" *ngIf="open">
+  <div class="modal-container">
+    <div class="modal-content mt-5">
+      <div class="d-flex flex-column justify-content-center align-items-center">
+        <p class="confirm-message">Are you sure you want to delete</p>
+        <p class="user-name">{{user.first_name}} {{user.last_name}}</p>
+      </div>
+      <div class="d-flex justify-content-between align-items-center mb-3 w-100 gap-2 mt-3">
+        <button class="btn action-btn border rounded-pill delete-action w-50 text-center" (click)="closeModal()">
+          No
+        </button>
+        <button (click)="delete()" class="btn action-btn text-white border rounded-pill edit-action w-50 text-center">
+          <span *ngIf="isSubmitting" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          <span *ngIf="!isSubmitting">Yes</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

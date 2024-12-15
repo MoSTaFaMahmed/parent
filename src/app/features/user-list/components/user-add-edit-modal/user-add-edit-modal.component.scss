@@ -1,0 +1,133 @@
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Container */
+.modal-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  width: 400px; /* Adjust width as necessary */
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* User Image Outside Modal (Circular) */
+.user-image-outside {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #fff;
+}
+
+/* User Image Inside Modal (50% Circle) */
+.user-image-inside {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+
+.user-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Form Group Styling */
+.form-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Action Buttons */
+.modal-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+
+
+
+
+.input{
+  outline: none;
+  border: none;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #6f42c1 !important;
+}
+
+.action-btn {
+  display: flex;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  align-items: center;  /* Aligns the icon and text in the center vertically */
+  padding: 8px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.edit-action{
+  background-color: #8E44AD;
+}
+.delete-action{
+color: #8E44AD;
+border: 1px solid #8E44AD !important;
+}
+button.w-100 {
+  width: 100%;
+}
+button.text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <img src="../../../assets/images/Logo.png" alt="logo">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+        <li class="nav-item ms-2" *ngIf="isLoggedIn$ | async; else loginTemplate" (click)="logOut()">
+          <a class="btn btn-login text-white border rounded-pill" href="#">ENQUIRE</a>
+        </li>
+        <ng-template #loginTemplate>
+          <li class="nav-item ms-2">
+            <a class="btn btn-login text-white border rounded-pill" href="#">LOGIN</a>
+          </li>
+        </ng-template>
+      </ul>
+    </div>
+  </div>
+</nav>

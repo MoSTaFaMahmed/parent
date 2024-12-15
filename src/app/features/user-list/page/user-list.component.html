@@ -1,0 +1,48 @@
+<div class="bg-light w-100 h-100">
+  <div class="users-nav">
+    <div class="container d-flex justify-content-between align-items-center mb-3">
+      <div class="d-flex flex-column m-2">
+        <p class="page-title">Home / Dashboard</p>
+        <h4 class="user-list">Users List</h4>
+      </div>
+      <button class="btn btn-login text-white border rounded-pill" (click)="onOpenAddModal()" >
+        + New User
+      </button>
+    </div>
+  </div>
+
+  <div class="container cards-container bg-white mt-4">
+    <div class="users-scroll-container d-flex" [class.modal-open]="openDetails">
+      <!-- User Cards Section -->
+      <div class="user-cards">
+        <div class="d-flex mt-3 mx-4 justify-content-between align-items-center">
+          <p class="table-header">User</p>
+          <p class="table-header px-5">Actions</p>
+        </div>
+        <ng-container *ngFor="let user of users">
+          <app-user-card  (openModal)="onOpenModal($event)" [user]="user"></app-user-card>
+        </ng-container>
+      </div>
+
+      <!-- User Details Modal Section -->
+      <app-user-detail-modal (openModal)="onOpenModal($event)" [open]="openDetails" (close)="closeModal('info')" [user]="selectedUser" *ngIf="openDetails"></app-user-detail-modal>
+    </div>
+  </div>
+
+  <div *ngIf="paginationLoading" class="text-center py-3">
+    <p>Loading More users...</p>
+  </div>
+
+  <div class="text-center py-3">
+    <button *ngIf="!paginationLoading && !isAllLoaded" class="btn btn-primary" (click)="loadMoreUsers()">Load More</button>
+  </div>
+</div>
+
+<div *ngIf="isLoading" class="loading-spinner">
+  <mat-spinner diameter="50"></mat-spinner>
+</div>
+
+
+<app-user-add-edit-modal (save)="loadUsers()" [mode]="actionMode"  [open]="openActionModal" (close)="closeModal('add')" [user]="selectedUser" *ngIf="openActionModal" ></app-user-add-edit-modal>
+
+<app-confirm-modal (save)="loadUsers()" [open]="deleteConfirm" (close)="closeModal('delete')" [user]="selectedUser" *ngIf="deleteConfirm" ></app-confirm-modal>

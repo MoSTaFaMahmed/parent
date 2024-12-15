@@ -1,0 +1,29 @@
+*{
+  overflow: hidden !important;
+}
+.welcome-back {
+  color: #34495E;
+  font-size: 25px;
+  letter-spacing: 0;
+  line-height: 29px;
+}
+.please-login-to-acce {
+  color: #7F8C8D;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+
+
+.forget-password{
+  font-size: 14px;
+  line-height: 17px;
+
+}
+.btn-login{
+  background-color: #8E44AD;
+  transition: all 0.3s ease;
+}
+.toastr {
+  z-index: 1050 !important;
+}
