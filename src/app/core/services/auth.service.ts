@@ -29,6 +29,7 @@ export class AuthenticationService {
         map((result) => {
           if (result) {
             this._userSubject.next(result);
+            this._isLoggedInSubject.next(true);
             const token = { token: result.token };
             localStorage.setItem('authTokenKey', JSON.stringify(token));
             const user = userData;

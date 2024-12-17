@@ -6,7 +6,6 @@ import { AuthenticationService } from '@core/services/auth.service';
 import { LoginResponse, LoginRequest } from '@core/models/auth.model';
 import { Subject, takeUntil } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
 @Component({
   selector: 'app-log-in',
   standalone: true,
@@ -14,19 +13,19 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     ReactiveFormsModule,
     CommonModule
   ],
-  providers: [AuthenticationService],
   templateUrl: './log-in.component.html',
-  styleUrl: './log-in.component.scss'
+  styleUrls: ['./log-in.component.scss']
 })
 export class LogInComponent {
   loginForm!: FormGroup;
   errorMessage: string | null = null;
   private destroy$ = new Subject<void>();
   isSubmitting = false;
+
   constructor(
     private router: Router,
     private authService: AuthenticationService,
-    private snackBar :MatSnackBar
+    private snackBar: MatSnackBar
   ) {
     this.initForm();
   }
